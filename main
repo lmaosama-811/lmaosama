@@ -1,0 +1,37 @@
+| **16:30–17:30** | Viết report ngắn & đánh giá lại ngày học                                                                             | - Mở file `REPORT-20250701.md` trong repo, tóm tắt:<br>   - Điều đã học: Git init, branch, merge, push<br>   - Khó khăn: (nếu có)<br>   - Kế hoạch tối ưu cho ngày sau<br>- Commit & push file report                                                           |
+| **17:30–18:00** | Tổng kết & Lên kế hoạch nhanh cho ngày 2/7                                                                            | - Note các điểm còn vướng để hỏi hoặc tìm tài liệu bổ sung về Git.<br>- Chuẩn bị tài khoản Codecademy và tài liệu ML cơ bản cho ngày mai.                                                                                                                     |
+
+---
+
+### Chi tiết bước lệnh mẫu
+
+```bash
+# Kiểm tra Git
+git --version
+
+# Thiết lập repo ban đầu
+mkdir it-e10-project && cd it-e10-project
+git init
+echo "# IT-E10 Test" > README.md
+git add README.md
+git commit -m "Init repo"
+
+# Tạo branch feature
+git checkout -b feature
+echo "Nội dung test feature" > feature.txt
+git add feature.txt
+git commit -m "Add feature file"
+
+# Merge về main
+git checkout main
+git merge feature
+
+# Tạo report
+echo "- Học Git cơ bản: init, add, commit, branch, merge, push
+- Đã hoàn thành unit 1–2 Codecademy Learn Git" > REPORT-20250701.md
+git add REPORT-20250701.md
+git commit -m "Add daily report for 2025-07-01"
+
+# Đẩy lên GitHub (thay bằng URL repo của bạn)
+git remote add origin https://github.com/your-username/IT-E10-Test.git
+git push -u origin main
